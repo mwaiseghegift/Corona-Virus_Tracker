@@ -15,7 +15,7 @@
                   <div class="counter-box wow fadeInUp" data-wow-delay="0.2s">
                     <div class="icon-o"><i class="lni-users"></i></div>
                     <div class="fact-count">
-                      <h2><span class="counter"> <b>{{ all }}</b> </span></h2>
+                      <h2><span class="counter"> <b>{{ total }}</b> </span></h2>
                       <h3>All Cases</h3>
                     </div>
                   </div>
@@ -57,7 +57,7 @@
                 <div class="counter-box wow fadeInUp" data-wow-delay="0.2s">
                   <div class="icon-o"><i class="lni-users"></i></div>
                   <div class="fact-count">
-                    <h2><span class="counter"> <b>{{ serioz }}</b> </span></h2>
+                    <h2><span class="counter"> <b>{{ critical }}</b> </span></h2>
                     <h3>Critical Cases</h3>
                   </div>
                 </div>
@@ -69,11 +69,14 @@
         </div>
       </section>
       <!-- Counter Section End -->
+      <div class="bg-success">
+        <h5 class="text-center">Last Updated on {{ date_updated }}</h5>
+      </div>
 
 </div>
 <footer>
     <div class="text-center">
-        <p class="bg-success"> Developed by <a href="https://gateway47.pythonanywhere.com">itsregalo</a> .</p>
+        <p class="bg-success"> Developed by <a href="https://github.com/itsregalo">itsregalo</a> .</p>
     </div>
     
 </footer>
