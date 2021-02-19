@@ -23,6 +23,7 @@ def HomeView(request, *args, **kwargs):
         'critical':data['cases']['critical'],
         'recovered':data['cases']['recovered'],
         'deaths':data['deaths']['total'],
+        'new_deaths':data['deaths']['new'],
         'total':data['cases']['total'],
         'date_updated':data['day'],
         'time_updated':data['time']
