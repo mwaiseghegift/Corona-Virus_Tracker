@@ -31,3 +31,7 @@ def HomeView(request, *args, **kwargs):
     }
     
     return render(request, 'index.html', context)
+
+def Countries(request, *args, **kwargs):
+    context = {}
+    return render(request, 'countries.html', context)
