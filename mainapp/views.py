@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 import requests
 from .models import Country
 
@@ -43,3 +43,11 @@ def CountriesListView(request, *args, **kwargs):
         
     }
     return render(request, 'countries.html', context)
+
+
+def CountriesDetailView(request, pk, *args, **kwargs):
+    country = get_object_or_404(Country, pk=pk)
+    context = {
+        'country':country
+    }
+    return render(request, 'country_detail.html', context)

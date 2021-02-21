@@ -6,7 +6,7 @@ class Country(models.Model):
     name = models.CharField(max_length=200)
     
     def get_absolute_url(self):    
-        return reverse('mainapp:countries', kwargs={'pk': self.pk})
+        return reverse('mainapp:country_detail', kwargs={'pk': self.pk})
     
     def __str__(self):
         return self.name
