@@ -17,7 +17,7 @@ def HomeView(request, *args, **kwargs):
     response = requests.request("GET", url, headers=headers, params=querystring).json()
 
     data = response['response'][0]
-    print(data)
+
     context = {
         'new':data['cases']['new'],
         'active':data['cases']['active'],
@@ -60,7 +60,7 @@ def CountriesDetailView(request, name, *args, **kwargs):
     response = requests.request("GET", url, headers=headers, params=querystring).json()
 
     data = response['response'][0]
-    print(data)
+
     context = {
         'country':country,
         'new':data['cases']['new'],
