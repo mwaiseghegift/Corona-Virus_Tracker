@@ -5,7 +5,7 @@ from PIL import Image
 
 class Country(models.Model):
     name = models.CharField(max_length=200)
-    flag = models.ImageField(upload_to='images/country-flag', default='images/country_flag/hacker.jpg')
+    flag = models.ImageField(upload_to='images/country-flag', default='images/country-flag/hacker.jpg')
     
     def get_absolute_url(self):    
         return reverse('mainapp:country_detail', kwargs={'name': self.name})

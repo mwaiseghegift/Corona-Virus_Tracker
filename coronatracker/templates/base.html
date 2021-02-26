@@ -15,7 +15,27 @@
     </title>
 </head>
 
+
 <body style="background-color: #15202b"> 
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-info">
+        <a href="{% url 'mainapp:homepage' %}" class="navbar-brand">ReTech Corona Statistics</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="#" class="nav-item nav-link active">Home</a>
+                <a href="{% url 'mainapp:countries' %}" class="nav-item nav-link active">Countries</a>
+                <a href="https://github.com/itsregalo" class="nav-item nav-link active">Products</a>
+            </div>
+            <form class="form-inline ml-auto">
+                <input type="text" class="form-control mr-sm-2" placeholder="Search">
+                <button type="submit" class="btn btn-outline-light">Search</button>
+            </form>
+        </div>
+      </nav>
     {% block body %}
     
     {% endblock body %}

@@ -9,7 +9,7 @@
 {% block body %}
 
   <div class="text-center">
-      <h3 style="color: white;" class="p-3 bg-primary">Retech Coronavirus Tracker <span style="color: red;" >Live</span> </h3>
+      <h3 style="color: white;" class="p-3 bg-info">Retech Coronavirus Tracker <span style="color: red;" >Live</span> </h3>
   </div>
 
 <div class="container">
@@ -27,6 +27,7 @@
                   <div class="countries mb-3 m-2 rounded-lg p-3 col-lg-3 col-md-6 col-xs-12">
                     <div class="counter-box wow fadeInUp" data-wow-delay="0.2s">
                       <div class="icon-o"><i class="lni-users"></i></div>
+                        
                       <div class="fact-count">
                         <a href="{% url 'mainapp:country_detail' object.name %}"><h2><span class="counter"> <b>{{ object.name }}</b> </span></h2></a>
                         <h3></h3>
