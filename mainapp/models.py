@@ -1,6 +1,8 @@
 from django.db import models
 from django.urls import reverse
 from PIL import Image
+from imagekit.models import ImageSpecField
+from imagekit.processors import ResizeToFill
 # Create your models here.
 
 
@@ -34,6 +36,10 @@ class Country(models.Model):
                                blank=True, null=True)
     flag = models.ImageField(upload_to='images/country-flag', 
                              default='images/country-flag/hacker.jpg')
+    flag_thumbnail = ImageSpecField(source='flag',
+                                    processors = [ResizeToFill(300,150)],
+                                    format='JPEG',
+                                    options = {'quality':60})
     
     def get_absolute_url(self):    
         return reverse('mainapp:country_detail', kwargs={'name': self.name})

@@ -8,6 +8,7 @@ admin.site.site_title="RETECH Corona Stats"
 
 
 
+
 admin.site.register(Continent)
 admin.site.register(Region)
 admin.site.register(Country)

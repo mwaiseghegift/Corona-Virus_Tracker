@@ -1,3 +1,12 @@
 .countries {
     background-color: #50d8af;
 }
+
+.member {
+    background-color:#50d8af;
+    max-width: 100;
+}
+
+.body {
+    background-color: #15202b;
+}

@@ -1,5 +1,5 @@
-{% extends 'base.html' %}
 
+{% extends 'base.html' %}
 
 {% block title %}
     Countries
@@ -9,54 +9,46 @@
 {% block body %}
 
   <div class="text-center">
-      <h3 style="color: white;" class="p-3 bg-info">Retech Coronavirus Tracker <span style="color: red;" >Live</span> </h3>
+      <h3 style="color: white;" class="p-3 bg-info">Retech Coronavirus Statistics <span style="color: red;" >Live</span> </h3>
   </div>
 
 <div class="container">
 
-    <section id="counter" class="section-padding">
-        <div class="overlay"></div>
+  <section id="counter" class="section-padding">
+    <div class="overlay">
         <div class="container">
-          <div class="row justify-content-between">
-            <div class="col-lg-12 col-md-12 col-xs-12">
-              <div class="mt-4 text-center row">
 
-                
-                {% if countries %}
-                  {% for object in countries %}
-                  <div class="countries mb-3 m-2 rounded-lg p-3 col-lg-3 col-md-6 col-xs-12">
-                    <div class="counter-box wow fadeInUp" data-wow-delay="0.2s">
-                      <div class="icon-o"><i class="lni-users"></i></div>
-                        
-                      <div class="fact-count">
-                        <a href="{% url 'mainapp:country_detail' object.name %}"><h2><span class="counter"> <b>{{ object.name }}</b> </span></h2></a>
-                        <h3></h3>
+          <div class="row"> 
+              {% for object in countries %}
+                <div class="col-lg-4 col-md-6">
+                  <div class="member">
+                    {% if object.flag %}
+                      <div class="pic">
+                        <img src="{{ object.flag_thumbnail.url }}" alt="{{ object.name }}">
                       </div>
+                    {% endif %}
+                    <div class="text-light text-center member bg-info">
+                      <h3>{{ object.name }}</h3>
                     </div>
                   </div>
-                  {% endfor %}
-
-                {% else %}
-                  <div>
-                    <h2>No country yet</h2>
-                  </div>
-                {% endif %}
-                  
-
-            </div>
+                </div>
+              {% endfor %}
         </div>
+                
+              
+          </div>
+          
+          
+       </div>
       </div>
-    </div>
   </section>
   <!-- Counter Section End -->
-  <div class="bg-success">
-    <h5 class="text-center">Last Updated on {{ date_updated }}</h5>
-  </div>
+
 
 </div>
 <footer>
 <div class="text-center">
-    <p class="bg-success"> Developed by <a href="https://github.com/itsregalo">itsregalo</a> .</p>
+    <p class="bg-info"> Developed by <a href="https://github.com/itsregalo">itsregalo</a> .</p>
 </div>
 
 </footer>
