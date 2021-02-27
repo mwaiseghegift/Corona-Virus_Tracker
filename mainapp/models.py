@@ -3,11 +3,6 @@ from django.urls import reverse
 from PIL import Image
 # Create your models here.
 
-CONTINENTS = (
-    ('Africa','Africa'),
-    ('Europe','Europe'),
-)
-
 
 class Continent(models.Model):
     name = models.CharField(max_length=200)
@@ -20,6 +15,8 @@ class Continent(models.Model):
         return self.name
 class Region(models.Model):
     name = models.CharField(max_length=200)
+    continent = models.ForeignKey(Continent, on_delete=models.CASCADE,
+                                  blank=True, null=True)
     
     def get_absolute_url(self):
         return reverse("mainapp:region", kwargs={"name": self.name})
@@ -31,7 +28,7 @@ class Country(models.Model):
     name = models.CharField(max_length=200)
     continent = models.ForeignKey(Continent, on_delete=models.CASCADE, 
                                  related_name="country_category",
-                                 choices=CONTINENTS, null=True, blank=True)
+                                 null=True, blank=True)
     region = models.ForeignKey(Region, on_delete=models.CASCADE,
                                related_name="country_region",
                                blank=True, null=True)
