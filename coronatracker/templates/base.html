@@ -31,7 +31,8 @@
                 <a href="https://github.com/itsregalo" class="nav-item nav-link active">Products</a>
             </div>
             <form class="form-inline ml-auto">
-                <input type="text" class="form-control mr-sm-2" placeholder="Search">
+                <input name='q' type="text" placeholder="eg. kenya" class="form-control mr-sm-2" placeholder="Search"
+                value="{{ request.GET.q }}">
                 <button type="submit" class="btn btn-outline-light">Search</button>
             </form>
         </div>

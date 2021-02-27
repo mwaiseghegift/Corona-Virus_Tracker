@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 import requests
 from .models import Country
+from django.db.models import Q
 
 # Create your views here.
 
@@ -37,7 +38,11 @@ def CountriesListView(request, *args, **kwargs):
 
     countries = Country.objects.all()
     
-
+    query = request.GET.get('q', None)
+    
+    if query is not None:
+       countries = Country.objects.filter(Q(name__icontains=query))
+    
     context = {
         'countries':countries,
         
@@ -76,3 +81,6 @@ def CountriesDetailView(request, name, *args, **kwargs):
     }
        
     return render(request, 'country_detail.html', context)
+
+def country_search(request, *args, **kwargs):
+    pass
