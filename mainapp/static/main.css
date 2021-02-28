@@ -2,11 +2,21 @@
     background-color: #50d8af;
 }
 
-.member {
-    background-color:#50d8af;
-    max-width: 100;
-}
 
 .body {
-    background-color: #15202b;
+    background-color: #38565c;
 }
+
+.member {
+    text-align: center;
+    font-style:italic;
+    font-weight: bolder;
+    color: white;    
+}
+
+.country-card {
+    padding-bottom: 20px;
+}
+
+
+  

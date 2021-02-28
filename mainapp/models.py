@@ -39,7 +39,7 @@ class Country(models.Model):
     flag_thumbnail = ImageSpecField(source='flag',
                                     processors = [ResizeToFill(300,150)],
                                     format='JPEG',
-                                    options = {'quality':60})
+                                    options = {'quality':100})
     
     def get_absolute_url(self):    
         return reverse('mainapp:country_detail', kwargs={'name': self.name})

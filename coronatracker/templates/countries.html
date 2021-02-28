@@ -14,35 +14,50 @@
 
 <div class="container">
 
-  <section id="counter" class="section-padding">
-    <div class="overlay">
-        <div class="container">
+    <section class="wow fadeInUp">
+      <div class="container">
+        <div class="section-header">
+          <h3 class="bg-info text-center">Countries [East Africa]</h3>
+        </div>
 
-          <div class="row"> 
-              {% for object in countries %}
-                <div class="col-lg-4 col-md-6">
+        <div class="row">
+          
+          {% if countries %}
+
+          
+          {% for obj in countries %}
+            <div class="col-lg-3 col-md-3 mb-6">
+              <div class="country-card">
+                <div class="card">
                   <div class="member">
-                    {% if object.flag %}
-                      <div class="pic">
-                        <img src="{{ object.flag_thumbnail.url }}" alt="{{ object.name }}">
+                    <a href="{% url 'mainapp:country_detail' obj.name %}">
+                      <div class="pic view overlay">    
+                        {% if obj.flag %}
+                          <img class="card-img-top" src="{{ obj.flag_thumbnail.url }}" alt="{{ obj.name }}">
+                        {% endif %}      
                       </div>
-                    {% endif %}
-                    <div class="text-light text-center member bg-info">
-                      <h3>{{ object.name }}</h3>
-                    </div>
+                      <div class="card-body">
+                        <h3><a href="{% url 'mainapp:country_detail' obj.name %}">{{ obj.name }}</a></h3>
+                      </div>
+                    </a>
                   </div>
                 </div>
-              {% endfor %}
-        </div>
-                
-              
+              </div>
+            </div>
+          {% endfor %}
+            
+
+          {% else %}
+          <div>
+            <h3>No Entries yet</h3>
           </div>
+          {% endif %}
           
-          
-       </div>
+
+        </div>
+
       </div>
-  </section>
-  <!-- Counter Section End -->
+    </section>
 
 
 </div>
