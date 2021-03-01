@@ -29,7 +29,7 @@
             <div class="col-lg-3 col-md-3 mb-6">
               <div class="country-card">
                 <div class="card">
-                  <div class="member">
+                  <div class="member bg-info">
                     <a href="{% url 'mainapp:country_detail' obj.name %}">
                       <div class="pic view overlay">    
                         {% if obj.flag %}
@@ -37,7 +37,7 @@
                         {% endif %}      
                       </div>
                       <div class="card-body">
-                        <h3><a href="{% url 'mainapp:country_detail' obj.name %}">{{ obj.name }}</a></h3>
+                        <h3><a class="text-light" href="{% url 'mainapp:country_detail' obj.name %}">{{ obj.name }}</a></h3>
                       </div>
                     </a>
                   </div>

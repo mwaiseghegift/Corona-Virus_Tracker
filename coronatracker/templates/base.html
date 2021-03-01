@@ -26,7 +26,7 @@
       
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
-                <a href="#" class="nav-item nav-link active">Home</a>
+                <a href="{% url 'mainapp:homepage' %}" class="nav-item nav-link active">Home</a>
                 <a href="{% url 'mainapp:countries' %}" class="nav-item nav-link active">Countries</a>
                 <a href="https://github.com/itsregalo" class="nav-item nav-link active">Products</a>
             </div>
@@ -40,6 +40,7 @@
     {% block body %}
     
     {% endblock body %}
-        
+
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 </body>
 </html>
